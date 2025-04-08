@@ -3,6 +3,7 @@ import type { LinksFunction } from "@remix-run/node";
 
 import "./tailwind.css";
 import Navbar from "./components/Navbar";
+import { FaGithub } from "react-icons/fa6";
 
 export const links: LinksFunction = () => [
 	{ rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -28,9 +29,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
 			</head>
 			<body className="">
 				<Navbar />
-
 				<div className="container mx-auto flex flex-col gap-10 px-6">{children}</div>
-
+				
+				<a href="https://github.com/dsnsgithub/onlyeggrolls.com" className="fixed bottom-4 right-4 text-lg text-center mb-4">
+					<FaGithub className="text-3xl" title="GitHub - @dsnsgithub"></FaGithub>
+				</a>
+				
 				<ScrollRestoration />
 				<Scripts />
 			</body>
